@@ -63,7 +63,6 @@ export default function Register() {
 
   return (
     <>
-      Add commentMore actions
       <NextSeo title="Crie uma conta | Ignite Call" />
       <Container>
         <Header>
