@@ -42,7 +42,10 @@ export function CalendarStep({ onSelectDateTime }: CalendarStepProps) {
     queryKey: ['availability', selectedDateWithoutTime],
     queryFn: async () => {
       const response = await api.get(`/users/${username}/availability`, {
-        params: { date: selectedDateWithoutTime },
+        params: {
+          date: selectedDateWithoutTime,
+          timezoneOffset: selectedDate ? selectedDate?.getTimezoneOffset() : 0,
+        },
       })
       return response.data
     },
